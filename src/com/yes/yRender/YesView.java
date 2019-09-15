@@ -8,26 +8,21 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.TimerTask;
 
 public class YesView extends Application {
     @Override
-    public void start(Stage yStage) throws FileNotFoundException {
+    public void start(Stage yStage) {
         yStage.setTitle("Ryan vs the Hard R");
         yStage.setResizable(false);
         yStage.setAlwaysOnTop(false);
+        yStage.setFullScreen(true);
         final Canvas yesCanvas = new Canvas(1000,1000);
         final GraphicsContext gc = yesCanvas.getGraphicsContext2D();
-        Image image = new Image(new FileInputStream("D:\\Code\\RyanVersusTheHardR-Git\\gameData\\image0.jpg"));
-        //YesMain.ryan.setSpriteImage(new Image(YesMain.ryan.loc));
         System.out.println(YesMain.renderReg.getRenderList().size());
-        //gc.drawImage("D:\\Code\\RyanVersusTheHardR-Git\\gameData\\image0.jpg",1000,1000);
         for (ySprite i : YesMain.renderReg.getRenderList())
         {
             i.generateImage();
@@ -35,6 +30,9 @@ public class YesView extends Application {
         YesCore.yesTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
+                gc.clearRect(0,0,100,100);
+                gc.setFill(Color.CORNSILK);
+                gc.fillRect(0,0,1920,1080);
                 for (ySprite i: YesMain.renderReg.getRenderList())
                 {
                     try {
@@ -46,9 +44,6 @@ public class YesView extends Application {
                         e.printStackTrace();
                     }
                 }
-              gc.clearRect(0,0,100,100);
-              gc.setFill(Color.CORNSILK);
-              gc.fillRect(0,0,100,100);
             }
         },10,20);
         Group yesGroup = new Group(yesCanvas);

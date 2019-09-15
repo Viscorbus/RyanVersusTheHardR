@@ -15,4 +15,6 @@ public interface ySprite {
      Point getSize();
      void render(GraphicsContext gc) throws Exception;
      void generateImage();
+     void setIsDead(boolean deathState);
+     boolean getDeadState();
 }

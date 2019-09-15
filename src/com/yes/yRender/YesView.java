@@ -20,7 +20,7 @@ public class YesView extends Application {
         yStage.setResizable(false);
         yStage.setAlwaysOnTop(false);
         yStage.setFullScreen(true);
-        final Canvas yesCanvas = new Canvas(1000,1000);
+        final Canvas yesCanvas = new Canvas(1920,1080);
         final GraphicsContext gc = yesCanvas.getGraphicsContext2D();
         System.out.println(YesMain.renderReg.getRenderList().size());
         for (ySprite i : YesMain.renderReg.getRenderList())
@@ -51,5 +51,6 @@ public class YesView extends Application {
         yStage.setScene(yesScene);
         yStage.setOnCloseRequest(windowEvent -> System.exit(0));
         yStage.show();
+        yesScene.setOnKeyPressed(keyEvent -> YesMain.yesInt.keyPressed(keyEvent));
     }
 }

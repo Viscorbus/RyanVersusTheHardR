@@ -1,6 +1,7 @@
 package com.yes;
 
 import com.yes.yCore.YesCore;
+import com.yes.yInterface.YesInterface;
 import com.yes.yPhys.Point;
 import com.yes.yRender.Register;
 import com.yes.ySprites.Player;
@@ -8,13 +9,15 @@ import com.yes.ySprites.Player;
 public class YesMain {
     public static Player ryan,charlie;
     public static Register renderReg;
+    public static YesInterface yesInt;
     private void yesBootStrap()
     {
-        ryan = new Player("file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\image0.jpg",new Point(500,500),new Point(0,0));
-        charlie = new Player("file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\WIN_20190906_19_34_01_Pro.jpg",new Point (500,500),new Point(500,500));
+        ryan = new Player("file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\images\\spriteSheets\\ryanIdle2.png",new Point(64,147),new Point(0,0));
+        //charlie = new Player("file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\images\\WIN_20190906_19_34_01_Pro.jpg",new Point (500,500),new Point(500,500));
         renderReg = new Register();
         renderReg.addToRegister(ryan);
-        renderReg.addToRegister(charlie);
+        //renderReg.addToRegister(charlie);
+        yesInt = new YesInterface();
         YesCore.yes();
     }
     public static void main(String[]args) {

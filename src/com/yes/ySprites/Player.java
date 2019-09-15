@@ -12,6 +12,8 @@ public class Player implements ySprite{
     private Point coords,size;
     private String imgurl;
     public String loc = "file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\image0.jpg";
+    private int spriteUpdateCount = 0;
+    private int spriteSheetLoc = 0;
     private boolean deathState = false;
     public Player(String imgurl, Point size, Point coords)
     {
@@ -57,7 +59,17 @@ public class Player implements ySprite{
             //gc.setGlobalAlpha(0.1);
             //gc.setGlobalBlendMode(new BlendMode());
             //gc.setEffect(new BoxBlur(1000,1000,1));
-            gc.drawImage(spriteImage,0,0,1000,1000,coords.getX(),coords.getY(),size.getX(),size.getY());
+            if(spriteUpdateCount == 200)
+            {
+                spriteSheetLoc = spriteSheetLoc + 64;
+                if (spriteSheetLoc == 704)
+                {
+                    spriteSheetLoc = 0;
+                }
+                spriteUpdateCount = 0;
+            }
+            gc.drawImage(spriteImage,spriteSheetLoc,0,64,147,coords.getX(),coords.getY(),size.getX(),size.getY());
+            spriteUpdateCount = spriteUpdateCount+20;
         } else {
 
         }

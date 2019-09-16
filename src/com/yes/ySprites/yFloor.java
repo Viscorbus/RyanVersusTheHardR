@@ -1,10 +1,13 @@
 package com.yes.ySprites;
 
+import com.yes.yPhys.Point;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public class yFloor {
     private double floorNumber = 0;
-    Image floorImage;
+    private Image floorImage;
+    private Point currentTileLoc = new Point(0,0);
     void generateNewFloor()
     {
 
@@ -12,6 +15,10 @@ public class yFloor {
     void getNextFloor(String currFloor)
     {
 
+    }
+    public void setFloorImage(Image floorImage)
+    {
+        this.floorImage = floorImage;
     }
     Image getFloorBackground()
     {
@@ -25,4 +32,9 @@ public class yFloor {
     {
         return floorNumber;
     }
+    public void render(GraphicsContext gc)
+    {
+        gc.drawImage(floorImage,0,0,64,64,currentTileLoc.getX(),currentTileLoc.getY(),64,64);
+    }
+
 }

@@ -68,7 +68,7 @@ public class Player implements ySprite{
                 }
                 spriteUpdateCount = 0;
             }
-            gc.drawImage(spriteImage,spriteSheetLoc,0,64,147,coords.getX(),coords.getY(),size.getX(),size.getY());
+            gc.drawImage(spriteImage,spriteSheetLoc,0,64,147,coords.getX(),coords.getY(),size.getX()/1.25,size.getY()/1.25);
             spriteUpdateCount = spriteUpdateCount+20;
         } else {
 

@@ -20,14 +20,14 @@ public class YesView extends Application {
         yStage.setResizable(false);
         yStage.setAlwaysOnTop(false);
         yStage.setFullScreen(true);
-        final Canvas yesCanvas = new Canvas(1920,1080);
+        final Canvas yesCanvas = new Canvas(YesCore.windowSize.getX(),YesCore.windowSize.getY());
         final GraphicsContext gc = yesCanvas.getGraphicsContext2D();
         System.out.println(YesMain.renderReg.getRenderList().size());
         for (ySprite i : YesMain.renderReg.getRenderList())
         {
             i.generateImage();
         }
-        YesCore.yesTimer.scheduleAtFixedRate(new TimerTask() {
+        YesCore.yesViewTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 gc.clearRect(0,0,100,100);
@@ -45,11 +45,15 @@ public class YesView extends Application {
                     }
                 }
             }
-        },10,20);
+        },10,16);
         Group yesGroup = new Group(yesCanvas);
         Scene yesScene = new Scene(yesGroup);
         yStage.setScene(yesScene);
-        yStage.setOnCloseRequest(windowEvent -> System.exit(0));
+        yStage.setOnCloseRequest(windowEvent -> {
+            YesCore.yesEngineTimer.purge();
+            YesCore.yesViewTimer.purge();
+            System.exit(0);
+        });
         yStage.show();
         yesScene.setOnKeyPressed(keyEvent -> YesMain.yesInt.keyPressed(keyEvent));
     }

@@ -2,9 +2,6 @@ package com.yes.ySprites;
 
 import com.yes.yPhys.Point;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.effect.BlendMode;
-import javafx.scene.effect.BoxBlur;
-import javafx.scene.effect.MotionBlur;
 import javafx.scene.image.Image;
 
 public class Player implements ySprite{

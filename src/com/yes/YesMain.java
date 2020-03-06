@@ -16,8 +16,8 @@ public class YesMain {
     public Point4 roomData;
     private void yesBootStrap()
     {
-        YesCore.windowSize = new Point(1920,1080);
-        ryan = new Player("file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\images\\spriteSheets\\ryanIdle2.png",new Point(64,147),new Point(0,0));
+        YesCore.windowSize = new Point(500,500);
+        ryan = new Player("file:/home/john/Downloads/RyanIdle3darkSheet.png",new Point(64,147),new Point(0,0));
         //charlie = new Player("file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\images\\WIN_20190906_19_34_01_Pro.jpg",new Point (500,500),new Point(500,500));
         renderReg = new Register();
         renderReg.addToRegister(ryan);

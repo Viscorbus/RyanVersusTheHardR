@@ -8,9 +8,9 @@ import javafx.scene.input.KeyEvent;
 public class YesInterface {
     private boolean run = true;
     public YesInterface() {
-       // while (run) {
-//
-        //}
+        while (run) {
+
+        }
     }
     public void keyPressed(KeyEvent e)
     {

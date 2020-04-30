@@ -6,8 +6,12 @@ import com.yes.yPhys.Point;
 import javafx.scene.input.KeyEvent;
 
 public class YesInterface {
+    private boolean run = true;
+    public YesInterface() {
+        while (run) {
 
-    public YesInterface() { }
+        }
+    }
     public void keyPressed(KeyEvent e)
     {
         switch(e.getCode())
@@ -49,5 +53,14 @@ public class YesInterface {
 
                 break;
         }
+    }
+    public void keyReleased(KeyEvent e) {
+
+    }
+    public boolean getRunState() {
+        return run;
+    }
+    public void setRunState(boolean run) {
+        this.run = run;
     }
 }

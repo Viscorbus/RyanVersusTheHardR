@@ -56,6 +56,5 @@ public class YesView extends Application {
         });
         yStage.show();
         yesScene.setOnKeyPressed(keyEvent -> YesMain.yesInt.keyPressed(keyEvent));
-        yesScene.setOnKeyReleased(keyEvent -> YesMain.yesInt.keyReleased(keyEvent));
     }
 }

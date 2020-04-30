@@ -11,7 +11,7 @@ public class Player implements ySprite{
     private Image spriteImage;
     private Point coords,size;
     private String imgurl;
-    //public String loc = "file:gameData\\image0.jpg";
+    public String loc = "file:D:\\Code\\RyanVersusTheHardR-Git\\gameData\\image0.jpg";
     private int spriteUpdateCount = 0;
     private int spriteSheetLoc = 0;
     private boolean deathState = false;
